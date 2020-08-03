@@ -119,7 +119,6 @@ namespace Starwars
         /// <summary>
         /// Opgave 10
         /// </summary>
-        /// <param name="surfacewater"></param>
         /// <returns></returns>
         public List<Planet> GetPlanetBySurfaceAre()
         {
@@ -134,7 +133,6 @@ namespace Starwars
         /// <summary>
         /// Opgave 11
         /// </summary>
-        /// <param name="surfacewater"></param>
         /// <returns></returns>
         public List<Planet> GetPlanetsByExtop()
         {
@@ -158,8 +156,6 @@ namespace Starwars
        /// <summary>
        /// opgave 13
        /// </summary>
-       /// <param name="startswith"></param>
-       /// <param name="endswith"></param>
        /// <returns></returns>
         public List<Planet> GetPlanetsByClimant()
         {
@@ -168,10 +164,7 @@ namespace Starwars
         }
         /// <summary>
         /// opgave 14
-        /// Findalleelementer,hvorklimaetbestårafsumpogsorterlistenefterrotationsperiodeognavn
         /// </summary>
-        /// <param name="startswith"></param>
-        /// <param name="endswith"></param>
         /// <returns></returns>
         public List<Planet> GetPlanetsBySwampsSorted()
         {
@@ -181,8 +174,6 @@ namespace Starwars
         /// <summary>
         /// opgave 15
         /// </summary>
-        /// <param name="startswith"></param>
-        /// <param name="endswith"></param>
         /// <returns></returns>
         public List<Planet> GetPlanetsByWoels()
         {
@@ -193,8 +184,6 @@ namespace Starwars
         /// <summary>
         /// opgave 16
         /// </summary>
-        /// <param name="startswith"></param>
-        /// <param name="endswith"></param>
         /// <returns></returns>
         public List<Planet> GetPlanetsByDoubleLetters()
         {
