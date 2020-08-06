@@ -11,6 +11,9 @@ namespace Starwars
     {
         List<Planet> planets;
         NameComparer NameComparer;
+        
+        //Hvorfor ref? Det er ikke særligt smart og ikke nødvendigt!
+        //Du skal give mig en virkelig god grund, før end jeg vil godtage denne ;)
         public DataController(ref List<Planet> _planets)
         {
             planets = _planets;
@@ -54,7 +57,9 @@ namespace Starwars
         /// <param name="EndLetter"></param>
         /// <param name="LetterAtSecPos"></param>
         /// <returns></returns>
-        public List<Planet> GetPlanetByEndLetter(string EndLetter, string LetterAtSecPos)
+        
+        //Attributter ALTID lille begyndelsesbogstav
+        public List<Planet> GetPlanetByEndLetter(string endLetter, string letterAtSecPos)
         {
             var result = planets.Where(x => x.Name.ToLower().EndsWith(EndLetter.ToLower())).ToList<Planet>();
             var subResult = result.Where(x => x.Name.ToLower().Substring(1,1).Contains(LetterAtSecPos));
@@ -100,6 +105,8 @@ namespace Starwars
         /// <param name="surfaceWaterAmount"></param>
         /// <param name="containsLetter"></param>
         /// <returns></returns>
+        
+        //Her kan du godt finde ud af lille begyndelsesbogstav!! 
         public List<Planet> GetPlanetsByRot(int maxPir,int surfaceWaterAmount, string containsLetter)
         {
             var result = planets.Where(x => x.RotationPeriod > maxPir && x.SurfaceWater > surfaceWaterAmount && x.Name.ToLower().Contains(containsLetter)).OrderBy(x => x.Name).ThenBy(x => x.SurfaceWater).ThenBy(x=> x.RotationPeriod).ToList<Planet>();
@@ -122,7 +129,8 @@ namespace Starwars
         /// <returns></returns>
         public List<Planet> GetPlanetBySurfaceAre()
         {
-            var result = planets.Where(x => x.Diameter != 0 && x.Population != 0).OrderBy(x => 
+            //For læsevenlighedens skyld bør man altid indkapsle i paranteser
+            var result = planets.Where((x => x.Diameter != 0) && (x.Population != 0)).OrderBy(x => 
             {
                
                 double tempArea = 4 * Math.PI * (Math.Pow((x.Diameter / 2), 2));
@@ -136,6 +144,7 @@ namespace Starwars
         /// <returns></returns>
         public List<Planet> GetPlanetsByExtop()
         {
+            //Hvorfor stort begyndelsesbogstav igen?
             var PCloneList = planets.Where(x => x.RotationPeriod > 0);
             var result = planets.Except(PCloneList);
             return result.ToList<Planet>();
